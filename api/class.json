@@ -1,0 +1,89 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 80,
+  "data": [
+    {
+      "majorName": "数学与应用数学",
+      "cno": "1720853",
+      "period": "2017",
+      "jionDate": "2017-09-01",
+      "num":40,
+      "classTeacher":"麦青",
+      "counsellor":"张慧慧"
+    },
+    {
+      "majorName": "数学与应用数学",
+      "cno": "1720852",
+      "period": "2017",
+      "jionDate": "2017-09-01",
+      "num":40,
+      "classTeacher":"武慧敏",
+      "counsellor":"张慧慧"
+    },
+    {
+      "majorName": "数学与应用数学",
+      "cno": "1720851",
+      "period": "2017",
+      "jionDate": "2017-09-01",
+      "num":40,
+      "classTeacher":"武慧敏",
+      "counsellor":"张慧慧"
+    },
+    {
+      "majorName": "数据科学与大数据技术",
+      "cno": "1920881",
+      "period": "2019",
+      "jionDate": "2019-09-01",
+      "num":40,
+      "classTeacher":"张慧慧",
+      "counsellor":"张慧慧"
+    },
+    {
+      "majorName": "数据科学与大数据技术",
+      "cno": "1920882",
+      "period": "2019",
+      "jionDate": "2019-09-01",
+      "num":40,
+      "classTeacher":"张慧慧",
+      "counsellor":"张慧慧"
+    },
+    {
+      "majorName": "数据科学与大数据技术",
+      "cno": "2020881",
+      "period": "2020",
+      "jionDate": "2020-09-01",
+      "num":40,
+      "classTeacher":"张慧慧",
+      "counsellor":"张慧慧"
+    },
+    {
+      "majorName": "数据科学与大数据技术",
+      "cno": "2020882",
+      "period": "2020",
+      "jionDate": "2020-09-01",
+      "num":40,
+      "classTeacher":"张慧慧",
+      "counsellor":"张慧慧"
+    },
+    {
+      "majorName": "数学与应用数学",
+      "cno": "1620851",
+      "period": "2016",
+      "jionDate": "2016-09-01",
+      "num":40,
+      "classTeacher":"武慧敏",
+      "counsellor":"张慧慧"
+    },
+    {
+      "majorName": "数学与应用数学",
+      "cno": "1620852",
+      "period": "2016",
+      "jionDate": "2016-09-01",
+      "num":40,
+      "classTeacher":"陈小彪",
+      "counsellor":"张慧慧"
+    }
+
+  ]
+}

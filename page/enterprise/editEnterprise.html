@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-form layuimini-form">
+    <div class="layui-form-item">
+        <label class="layui-form-label required">企业名称</label>
+        <div class="layui-input-block">
+            <input id="ename" type="text" name="ename" lay-verify="required" value="北京柯蓝科技有限公司" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">总部所在城市</label>
+        <div class="layui-input-block">
+            <input id="ecity" type="text" name="ecity" lay-verify="required" value="北京" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">总部详细地址</label>
+        <div class="layui-input-block">
+            <input id="eaddress" type="text" name="eaddress" lay-verify="required" value="北京市海淀区" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">企业所属行业</label>
+        <div class="layui-input-block">
+            <input id="escope" type="text" name="escope" lay-verify="required" value="计算机金融" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">招聘负责人</label>
+        <div class="layui-input-block">
+            <input id="eman" type="text" name="eman" lay-verify="required" value="刘海海" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">负责人电话</label>
+        <div class="layui-input-block">
+            <input id="emantel" type="text" name="emantel" lay-verify="required" value="15392988343" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">主要招聘岗位</label>
+        <div class="layui-input-block">
+            <input id="ejob" type="text" name="ejob" lay-verify="required" value="Java开发" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label required">开始合作时间</label>
+        <div class="layui-input-block">
+            <input type="text" name="date" id="date" lay-verify="date"value="2019-10-12" autocomplete="off" class="layui-input" readonly>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">合作状态</label>
+        <div class="layui-input-inline">
+            <select name="status" lay-filter="status" id="status">
+                <option value="">--请选择合作状态--</option>
+                <option value="1" selected>合作中</option>
+                <option value="2">暂停合作</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn layui-btn-normal" lay-submit lay-filter="saveBtn">修改合作企业信息</button>
+            <button type="reset" id="reset" class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-refresh"></i>重置信息</button>
+        </div>
+    </div>
+</div>
+<script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script>
+    layui.use(['form','laydate'], function () {
+        var form = layui.form,
+            layer = layui.layer,
+            laydate = layui.laydate,
+            $ = layui.$;
+
+        //出生日期
+        laydate.render({
+            elem: '#date'
+        });
+        $("#reset").click(function () {
+            $("#ename").val("");
+            $("#ecity").val("");
+            $("#eaddress").val("");
+            $("#escope").val("");
+            $("#eman").val("");
+            $("#emantel").val("");
+            $("#ejob").val("");
+            $("#date").val("");
+            $("#status").val("");
+            form.render();
+        });
+
+
+        //监听提交
+        form.on('submit(saveBtn)', function (data) {
+            var index = layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            }, function () {
+
+                // 关闭弹出层
+                layer.close(index);
+
+                var iframeIndex = parent.layer.getFrameIndex(window.name);
+                parent.layer.close(iframeIndex);
+
+            });
+
+            return false;
+        });
+
+    });
+</script>
+</body>
+</html>

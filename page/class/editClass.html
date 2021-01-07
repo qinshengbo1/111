@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>添加班级</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-form layuimini-form">
+    <div class="layui-form-item">
+        <label class="layui-form-label required">学校名称</label>
+        <div class="layui-input-block">
+            <select name="school" lay-filter="school" disabled>
+                <option value="">--请选择--</option>
+                <option value="0">太原理工大学</option>
+                <option value="1" selected>太原工业学院</option>
+                <option value="2">山西大学</option>
+                <option value="3">中北大学</option>
+                <option value="4">山西财经大学</option>
+                <option value="5">太原科技大学</option>
+                <option value="6">山西工商学院</option>
+                <option value="7">太原学院</option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">系别</label>
+        <div class="layui-input-block">
+            <select name="department" lay-filter="department" disabled>
+                <option value="">--请选择--</option>
+                <option value="1">机械工程系</option>
+                <option value="2">电子工程系</option>
+                <option value="3">自动化系</option>
+                <option value="4">化学与化工系</option>
+                <option value="5">计算机工程系</option>
+                <option value="6">环境与安全工程系</option>
+                <option value="7">材料工程系</option>
+                <option value="8" selected>理学系</option>
+                <option value="9">经济与管理系</option>
+                <option value="10">外语系</option>
+                <option value="11">设计艺术系</option>
+                <option value="12">法学系</option>
+                <option value="13">体育系</option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">专业名称</label>
+        <div class="layui-input-block">
+            <select name="major" lay-filter="major">
+                <option value="">--请选择--</option>
+                <option value="0">数据科学与大数据技术</option>
+                <option value="1" selected>数学与应用数学</option>
+                <option value="2">信息与计算科学</option>
+
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">班级编号</label>
+        <div class="layui-input-block">
+            <input id="cno" type="text" name="className" lay-verify="required" value="1720853" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">入学日期</label>
+        <div class="layui-input-block">
+            <input type="text" name="joindate" id="joindate" lay-verify="date" value="2017-09-01" autocomplete="off" class="layui-input" readonly>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">毕业日期</label>
+        <div class="layui-input-block">
+            <input type="text" name="enddate" id="enddate" lay-verify="date" value="2021-07-01" autocomplete="off" class="layui-input" readonly>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">班级人数</label>
+        <div class="layui-input-block">
+            <input id="classNum" type="number" name="classNum" lay-verify="required" value="40" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">班主任</label>
+        <div class="layui-input-block">
+            <input id="classTeacher" type="text" name="classTeacher" lay-verify="required" value="麦青" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">班主任电话</label>
+        <div class="layui-input-block">
+            <input id="telephone" type="text" name="classTeacherTel" lay-verify="required" value="1234567890" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">辅导员</label>
+        <div class="layui-input-block">
+            <input id="instructor" type="text" name="counsellor" lay-verify="required" value="张慧慧" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">辅导员电话</label>
+        <div class="layui-input-block">
+            <input id="instructorTel" type="text" name="counsellorTel" lay-verify="required" value="1234567890" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">备注信息</label>
+        <div class="layui-input-block">
+            <textarea id="remark" name="remark" class="layui-textarea">无</textarea>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn layui-btn-normal" lay-submit lay-filter="saveBtn">修改班级</button>
+            <button type="reset" id="reset" class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-refresh"></i>重置信息</button>
+        </div>
+    </div>
+</div>
+<script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script>
+    layui.use(['form','laydate'], function () {
+        var form = layui.form,
+            layer = layui.layer,
+            laydate = layui.laydate,
+            $ = layui.$;
+
+
+        //入学日期
+        laydate.render({
+            elem: '#joindate'
+        });
+        //毕业日期
+        laydate.render({
+            elem: '#enddate'
+        });
+
+        $("#reset").click(function () {
+            $("#cno").val("");
+            $("#major").val("");
+            $("#joindate").val("");
+            $("#enddate").val("");
+            $("#classNum").val("");
+            $("#classTeacher").val("");
+            $("#telephone").val("");
+            $("#instructor").val("");
+            $("#instructorTel").val("");
+            $("#remark").val("");
+            form.render();
+        });
+
+        ///监听提交
+        form.on('submit(saveBtn)', function (data) {
+            var index = layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            }, function () {
+
+                // 关闭弹出层
+                layer.close(index);
+
+                var iframeIndex = parent.layer.getFrameIndex(window.name);
+                parent.layer.close(iframeIndex);
+
+            });
+
+            return false;
+        });
+
+    });
+</script>
+</body>
+</html>

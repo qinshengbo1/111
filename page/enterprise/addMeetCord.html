@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-form layuimini-form">
+    <div class="layui-form-item">
+        <label class="layui-form-label required">企业名称</label>
+        <div class="layui-input-block">
+            <input id="ename" type="text" name="ename" lay-verify="required" lay-reqtext="企业名称不能为空" value="北京柯蓝科技有限公司" value="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">招聘会名称</label>
+        <div class="layui-input-block">
+            <input id="mname" type="text" name="mname" lay-verify="required" lay-reqtext="本次招聘会主题名称不能为空" placeholder="请输入本次招聘会主题名称" value="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">招聘负责人</label>
+        <div class="layui-input-block">
+            <input id="eman" type="text" name="eman" lay-verify="required" lay-reqtext="招聘负责人不能为空" placeholder="请输入招聘负责人" value="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">负责人电话</label>
+        <div class="layui-input-block">
+            <input id="emantel" type="text" name="emantel" lay-verify="required" lay-reqtext="负责人电话不能为空" placeholder="请输入负责人电话" value="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">学校负责老师</label>
+        <div class="layui-input-block">
+            <input id="steacher" type="text" name="steacher" lay-verify="required" lay-reqtext="学校负责老师不能为空" placeholder="请输入学校负责老师" value="" class="layui-input">
+        </div>
+    </div><div class="layui-form-item">
+    <label class="layui-form-label required">负责老师电话</label>
+    <div class="layui-input-block">
+        <input id="steachertel" type="text" name="steachertel" lay-verify="required" lay-reqtext="负责老师电话不能为空" placeholder="请输入负责老师电话" value="" class="layui-input">
+    </div>
+</div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">主要工作城市</label>
+        <div class="layui-input-block">
+            <input id="ecity" type="text" name="ecity" lay-verify="required" lay-reqtext="主要工作城市不能为空" placeholder="请输入主要工作城市" value="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+    <label class="layui-form-label required">主要招聘岗位</label>
+    <div class="layui-input-block">
+        <input id="ejob" type="text" name="ejob" lay-verify="required" lay-reqtext="主要招聘岗位不能为空" placeholder="请输入主要招聘岗位" value="" class="layui-input">
+    </div>
+</div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">目标招收人数</label>
+        <div class="layui-input-block">
+            <input id="enum" type="text" name="enum" lay-verify="required" lay-reqtext="目标招收人数不能为空" placeholder="请输入目标招收人数" value="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">实际招收人数</label>
+        <div class="layui-input-block">
+            <input id="enum1" type="text" name="ename1" lay-verify="required" lay-reqtext="实际招收人数不能为空" placeholder="请输入实际招收人数" value="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">招聘会活动地点</label>
+        <div class="layui-input-block">
+            <input id="mactivity" type="text" name="mactivity" lay-verify="required" lay-reqtext="实际招收人数不能为空" placeholder="请输入实际招收人数" value="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item"  >
+        <label class="layui-form-label required">活动时间</label>
+        <div class="layui-input-block">
+            <input type="text" name="showDate" id="showDate" lay-verify="date" placeholder="请选择活动开展时间" autocomplete="off" class="layui-input" readonly>
+        </div>
+    </div>
+
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label required">招聘资料上传</label>
+        <div class="layui-input-block" style="line-height: 36px;">
+            <input type="file" name="file"  ><br/>
+            <tip>注意:<br>
+                1、上传新的签名记录将会覆盖原有文件记录，请一次性上传完整记录。
+                <br><br>
+                2、最多只能上传10个文件，单个文件大小不能超过50MB！<br><br>
+                3、对于多个照片，可以是压缩之后上传！<br><br></tip>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn layui-btn-normal" lay-submit lay-filter="saveBtn">提交招聘会信息</button>
+            <button type="reset" id="reset" class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-refresh"></i>重置信息</button>
+        </div>
+    </div>
+</div>
+<script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script>
+        layui.use(['form','laydate'], function () {
+            var form = layui.form,
+                layer = layui.layer,
+                laydate = layui.laydate,
+                $ = layui.$;
+
+            // 活动时间
+            laydate.render({
+                elem: '#showDate',
+                max: maxDate()
+            });
+
+            // 设置最大可选的日期
+            function maxDate() {
+                var now = new Date();
+                return now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate();
+            }
+
+            $("#reset").click(function () {
+                $("#ename").val("");
+                $("#mname").val("");
+                $("#eman").val("");
+                $("#emantel").val("");
+                $("#steacher").val("");
+                $("#steachertel").val("");
+                $("#ecity").val("");
+                $("#ejob").val("");
+                $("#enum").val("");
+                $("#enum1").val("");
+                $("#mactivity").val("");
+                $("#showDate").val("");
+                form.render();
+            });
+
+
+
+        //监听提交
+        form.on('submit(saveBtn)', function (data) {
+            var index = layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            }, function () {
+
+                // 关闭弹出层
+                layer.close(index);
+
+                var iframeIndex = parent.layer.getFrameIndex(window.name);
+                parent.layer.close(iframeIndex);
+
+            });
+
+            return false;
+        })
+
+    });
+</script>
+</body>
+</html>

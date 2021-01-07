@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+</head>
+<body>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+
+        <fieldset class="table-search-fieldset">
+            <legend>成员统计</legend>
+            <div style="margin: 10px 10px 10px 10px">
+                <form class="layui-form layui-form-pane" action="">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">选择系别</label>
+                            <div class="layui-input-inline">
+                                <select name="department" lay-filter="department" disabled>
+                                    <option value="">--请选择--</option>
+                                    <option value="1">机械工程系</option>
+                                    <option value="2">电子工程系</option>
+                                    <option value="3">自动化系</option>
+                                    <option value="4">化学与化工系</option>
+                                    <option value="5">计算机工程系</option>
+                                    <option value="6">环境与安全工程系</option>
+                                    <option value="7">材料工程系</option>
+                                    <option value="8" selected>理学系</option>
+                                    <option value="9">经济与管理系</option>
+                                    <option value="10">外语系</option>
+                                    <option value="11">设计艺术系</option>
+                                    <option value="12">法学系</option>
+                                    <option value="13">体育系</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">年级</label>
+                            <div class="layui-input-inline">
+                                <input id="grade" type="text" name="grade" autocomplete="off" class="layui-input" placeholder="请选择年级" readonly>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">选择专业</label>
+                            <div class="layui-input-inline">
+                                <select name="major" lay-filter="major">
+                                    <option value="">--请选择--</option>
+                                    <option value="0">数据科学与大数据技术</option>
+                                    <option value="1">数学与应用数学</option>
+                                    <option value="2">信息与计算科学</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">状态</label>
+                            <div class="layui-input-inline">
+                                <select name="major" lay-filter="major">
+                                    <option value="">--请选择--</option>
+                                    <option value="0">正常</option>
+                                    <option value="1">退出</option>
+                                    <option value="2">毕业</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="layui-inline">
+                            <button type="submit" class="layui-btn layui-btn-primary"  lay-submit lay-filter="data-search-btn"><i class="layui-icon"></i> 搜 索</button>
+                            <button type="reset" id="reset" class="layui-btn layui-btn-primary"   lay-submit lay-filter="data-search-btn"><i class="layui-icon layui-icon-refresh"></i>重 置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </fieldset>
+
+    </div>
+    <div class="layui-col-md12">
+        <div class="layui-card">
+            <div class="layui-card-header"><i class="fa fa-line-chart icon"></i>报表统计</div>
+            <div class="layui-card-body">
+                <div id="echarts-pies" style="width: 100%;min-height:500px"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+        <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
+
+    </div>
+</div>
+<script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script src="../../js/lay-config.js?v=1.0.4" charset="utf-8"></script>-->
+<script>
+    layui.use(['form', 'table','laydate','echarts'], function () {
+        var $ = layui.jquery,
+            form = layui.form,
+            table = layui.table,
+            laydate = layui.laydate;
+            echarts = layui.echarts;
+        //年选择器
+
+        // 监听搜索操作
+        form.on('submit(data-search-btn)', function (data) {
+            var result = JSON.stringify(data.field);
+            layer.alert(result, {
+                title: '最终的搜索信息'
+            });
+
+            //执行搜索重载
+            table.reload('currentTableId', {
+                page: {
+                    curr: 1
+                }
+                , where: {
+                    searchParams: result
+                }
+            }, 'data');
+
+            return false;
+
+
+            /**
+             * 玫瑰图表
+             */
+            var echartsPies = echarts.init(document.getElementById('echarts-pies'), 'walden');
+            var optionPies = {
+                title: {
+                    text: '根据各年级统计成员人数饼图',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{a} <br/>{b} : {c} ({d}%)'
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'left',
+                    data: ['大一', '大二', '大三', '大四', '毕业']
+                },
+                series: [
+                    {
+                        name: '访问来源',
+                        type: 'pie',
+                        radius: '55%',
+                        center: ['50%', '60%'],
+                        roseType: 'radius',
+                        data: [
+                            {value: 335, name: '大一'},
+                            {value: 310, name: '大二'},
+                            {value: 234, name: '大三'},
+                            {value: 135, name: '大四'},
+                            {value: 368, name: '毕业'}
+                        ],
+                        emphasis: {
+                            itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]
+            };
+            echartsPies.setOption(optionPies);
+
+
+
+            // echarts 窗口缩放自适应
+            window.onresize = function () {
+                echartsRecords.resize();
+            }
+
+
+        });
+    });
+</script>
+
+</body>
+</html>

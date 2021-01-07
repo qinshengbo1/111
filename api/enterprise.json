@@ -1,0 +1,64 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "ename": "北京柯蓝科技有限公司",
+      "ecity": "北京",
+      "ejob": "计算机金融",
+      "epeople": "刘海海",
+      "etelephone": 15012312312,
+      "ework": "合作中",
+      "egangwei": "Java开发"
+    },
+    {
+      "ename": "北京思特奇有限公司",
+      "ecity": "北京",
+      "ejob": "通信行业",
+      "epeople": "刘下下",
+      "etelephone": 15012312312,
+      "ework": "合作中",
+      "egangwei": "Java开发"
+    },
+    {
+      "ename": "大连华宇科技有限公司",
+      "ecity": "大连",
+      "ejob": "通信行业",
+      "epeople": "刘下下",
+      "etelephone": 15012312312,
+      "ework": "合作中",
+      "egangwei": "Java开发"
+    },
+    {
+      "ename": "成都银海软件科技有限公司",
+      "ecity": "成都",
+      "ejob": "金融行业",
+      "epeople": "刘海海",
+      "etelephone": 15012312312,
+      "ework": "合作中",
+      "egangwei": "Java开发"
+    },
+    {
+      "ename": "山东国子科技有限公司",
+      "ecity": "山东",
+      "ejob": "物联网",
+      "epeople": "刘海海",
+      "etelephone": 15012312312,
+      "ework": "合作中",
+      "egangwei": "Java开发"
+    },
+    {
+      "ename": "山东国子科技有限公司",
+      "ecity": "山东",
+      "ejob": "物联网",
+      "epeople": "刘海海",
+      "etelephone": 15012312312,
+      "ework": "合作中",
+      "egangwei": "Java开发"
+    }
+
+
+
+  ]
+}

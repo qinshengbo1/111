@@ -1,0 +1,61 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 80,
+  "data": [
+    {
+      "id": 80,
+      "majorName": "信息计算与科学",
+      "creatTime": "2001-12-12",
+      "remark": "无"
+    },
+    {
+      "id": 81,
+      "majorName": "信息计算与科学",
+      "creatTime": "2001-12-12",
+      "remark": "无"
+    },
+    {
+      "id": 82,
+      "majorName": "信息计算与科学",
+      "creatTime": "2001-12-12",
+      "remark": "无"
+    },
+    {
+      "id": 83,
+      "majorName": "信息计算与科学",
+      "creatTime": "2001-12-12",
+      "remark": "无"
+    },
+    {
+      "id": 84,
+      "majorName": "信息计算与科学",
+      "creatTime": "2001-12-12",
+      "remark": "无"
+    },
+    {
+      "id": 85,
+      "majorName": "数学与应用数学",
+      "creatTime": "2011-12-12",
+      "remark": "无"
+    },
+    {
+      "id": 86,
+      "majorName": "信息计算与科学",
+      "creatTime": "2001-12-12",
+      "remark": "无"
+    },
+    {
+      "id": 87,
+      "majorName": "信息计算与科学",
+      "creatTime": "2001-12-12",
+      "remark": "无"
+    },
+    {
+      "id": 88,
+      "majorName": "数据科学与大数据技术",
+      "creatTime": "2018-12-12",
+      "remark": "无"
+    }
+  ]
+}
